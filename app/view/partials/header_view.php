@@ -35,13 +35,23 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
+                    <div class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
-                    </form>
+                        <?php if(empty(get_session_username())): ?>
+                            <a class="ms-3 btn btn-primary" href="?c=login"> Login </a>
+                        <?php else : ?>
+                            <span class="ms-3">
+                                Hi <?= get_session_username(); ?>
+                            </span>
+                            <form action="?c=login&m=logout" method="post">
+                                <button class="btn btn-primary ms-2" type="submit"> Logout</button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </nav>

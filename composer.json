@@ -5,7 +5,8 @@
             "database\\":"database/"
         },
         "files": [
-            "config/constant.php"
+            "config/constant.php",
+            "helper/common.php"
         ]
     }
 }
