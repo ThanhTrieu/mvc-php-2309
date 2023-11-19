@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "app\\":"app/",
+            "database\\":"database/"
+        },
+        "files": [
+            "config/constant.php"
+        ]
+    }
+}
