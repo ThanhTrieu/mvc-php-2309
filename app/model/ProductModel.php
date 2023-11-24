@@ -82,4 +82,17 @@ class ProductModel
     {
         return self::dataProducts;
     }
+
+    public function getDetailProductById($id = 0)
+    {
+        $products = self::dataProducts;
+        $detail = [];
+        foreach($products as $item){
+            if($item['id'] == $id){
+                $detail = $item;
+            }
+        }
+        return $detail;
+    }
+
 }

@@ -20,9 +20,15 @@ if(!function_exists("redirect_action")){
         header("Location:{$linkRedirect}");
     }
 }
-if(!function_exists("get_session_username")){
+if(!function_exists("get_session_username")) {
     function get_session_username() {
         $username = $_SESSION["username"] ?? null;
         return $username;
+    }
+}
+if(!function_exists("count_carts")){
+    function count_carts() {
+        $cart = $_SESSION['cart'] ?? [];
+        return count($cart);
     }
 }

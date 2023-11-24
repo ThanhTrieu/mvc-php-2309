@@ -9,11 +9,17 @@
                         <?php if($item["sale"] == 1): ?>
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <?php endif; ?>
-                        <img class="card-img-top" src="<?= $item["image"]; ?>" alt="<?= $item["name"]; ?>" />
+                        <a href="?c=detail&m=index&id=<?= $item['id']; ?>">
+                            <img class="card-img-top" src="<?= $item["image"]; ?>" alt="<?= $item["name"]; ?>" />
+                        </a>
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder"><?= $item["name"]; ?></h5>
+                                <h5 class="fw-bolder">
+                                    <a href="?c=detail&m=index&id=<?= $item['id']; ?>">
+                                        <?= $item["name"]; ?>
+                                    </a>
+                                </h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
                                     <?php if($item["star"] > 0): ?>
@@ -37,7 +43,7 @@
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="?c=cart&m=addCart">Add to cart</a>
+                                <a class="btn btn-outline-dark mt-auto" href="?c=cart&m=addCart&id=<?= $item['id']; ?>">Add to cart</a>
                             </div>
                         </div>
                     </div>
