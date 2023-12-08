@@ -6,7 +6,7 @@
             <?php foreach($products as $item): ?>
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <?php if($item["sale"] == 1): ?>
+                        <?php if($item["is_sale"] == 1): ?>
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <?php endif; ?>
                         <a href="?c=detail&m=index&id=<?= $item['id']; ?>">

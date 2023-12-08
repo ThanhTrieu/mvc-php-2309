@@ -40,7 +40,9 @@ class LoginController extends Controller
                     redirect_action("login","index",["state"=> "fail"]);
                 } else {
                     // luu vao session
-                    $_SESSION["username"] = $infoUser["name"];
+                    $_SESSION["username"] = $infoUser["username"];
+                    $_SESSION['idUser']   = $infoUser['id'];
+                    $_SESSION['emailUser']   = $infoUser['email'];
                     redirect_action("home","index");
                 }
             }
