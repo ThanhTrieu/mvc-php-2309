@@ -88,24 +88,21 @@ class RegisterController extends Controller
                             if(!empty($_SESSION['err_register']['avatar'])){
                                 unset($_SESSION['err_register']['avatar']);
                             }
-                            if(!empty($_SESSION['err_register']['file'])){
-                                unset($_SESSION['err_register']['file']);
-                            }
-                        }
+                        } else {
+                            $_SESSION['err_register']['avatar'] = 'can not upload file';
+                        } 
                     } else {
                         $_SESSION['err_register']['avatar'] = 'avatar type format is .png,.jpg..jpeg';
                     }
                 } else {
-                    $_SESSION['err_register']['file'] = 'file is error, can not upload';
+                    $_SESSION['err_register']['avatar'] = 'file is error, can not upload';
                 }
             } else {
                 if(!empty($_SESSION['err_register']['avatar'])){
                     unset($_SESSION['err_register']['avatar']);
                 }
-                if(!empty($_SESSION['err_register']['file'])){
-                    unset($_SESSION['err_register']['file']);
-                }
             }
+            
             // validate information
             if(empty($firstName)){
                 $_SESSION['err_register']['first_name'] = "First name is not empty";
