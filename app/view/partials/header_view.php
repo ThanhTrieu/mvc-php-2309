@@ -44,7 +44,8 @@
                             </span>
                         </a>
                         <?php if(empty(get_session_username())): ?>
-                            <a class="ms-3 btn btn-primary" href="?c=login"> Login </a>
+                            <a class="ms-3 btn btn-primary btn-sm" href="?c=login"> Login </a>
+                            <a class="ms-2 btn btn-info btn-sm" href="?c=register">Register</a>
                         <?php else : ?>
                             <span class="ms-3">
                                 Hi <?= get_session_username(); ?>
