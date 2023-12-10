@@ -13,7 +13,7 @@ class DetailController extends Controller
         // $infoPd = lay trong model - tham khao cart controller
 
         $this->loadHeaderView(["title" => "Detail page"]);
-        $this->loadView("home/index_view");
+        $this->loadView("detail/index_view");
         $this->loadFooterView();
     }
 }
